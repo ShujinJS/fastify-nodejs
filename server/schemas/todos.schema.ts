@@ -3,6 +3,8 @@ import { todoItemSchema } from './common.schema';
 // Handlers
 import { getTodosController, getTodoDetailsController } from '../controllers/todos.controller';
 
+import Fastify, { RouteShorthandOptions } from "fastify";
+
 export const getTodosOpts = {
     schema: {
         response: {

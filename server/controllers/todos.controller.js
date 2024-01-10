@@ -7,10 +7,10 @@ function getTodosController(req, reply) {
 }
 exports.getTodosController = getTodosController;
 function getTodoDetailsController(req, reply) {
-    const params = JSON.stringify(req.params);
-    const response = JSON.parse(params);
+    // const params = JSON.stringify(req.params);
+    // const response = JSON.parse(params)
     const todoItem = todos_1.todos.find((todo) => {
-        return todo.id === response.id;
+        return todo.id === req.params.id;
     });
     reply.send(todoItem);
 }

@@ -7,18 +7,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const fastify_1 = __importDefault(require("fastify"));
 // Routes
 const todos_route_1 = __importDefault(require("./routes/todos.route"));
-const server = (0, fastify_1.default)({ logger: true });
+const fastify = (0, fastify_1.default)({ logger: true });
 const serverConfigs = {
     port: 5000,
 };
-server.register(require('fastify-swagger'));
-server.register(todos_route_1.default);
+fastify.register(todos_route_1.default);
 const start = async () => {
     try {
-        await server.listen(serverConfigs);
+        await fastify.listen(serverConfigs);
     }
     catch (error) {
-        server.log.error(error);
+        fastify.log.error(error);
         process.exit(1);
     }
 };
