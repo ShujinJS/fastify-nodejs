@@ -4,7 +4,16 @@ export const todoItemSchema = {
         id: {
             type: 'string'
         },
-        title: {
+        task: {
+            type: 'string'
+        }
+    }
+}
+
+export const deleteTodoSchema = {
+    type: 'object',
+    properties: {
+        msg: {
             type: 'string'
         }
     }

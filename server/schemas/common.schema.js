@@ -1,13 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.todoItemSchema = void 0;
+exports.deleteTodoSchema = exports.todoItemSchema = void 0;
 exports.todoItemSchema = {
     type: 'object',
     properties: {
         id: {
             type: 'string'
         },
-        title: {
+        task: {
+            type: 'string'
+        }
+    }
+};
+exports.deleteTodoSchema = {
+    type: 'object',
+    properties: {
+        msg: {
             type: 'string'
         }
     }
